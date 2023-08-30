@@ -1,0 +1,28 @@
+.experience{
+  padding-bottom: 4%;
+  .experience_title{
+    margin: 2% 0;
+    text-align: center;
+    h2{
+      font-weight: 600;
+      font-size: 30px;
+    }
+  }
+  .experience_content{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .principle{
+    text-align: center;
+    margin: 3% 0;
+  }
+  .values{
+    .values_title{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+}

@@ -1,0 +1,49 @@
+main{
+  background-color: rgb(206, 206, 206);
+  .direction{
+    text-align: center;
+    h2{
+      font-weight: 500;
+      font-size: 28px;
+      padding: 2% 0;
+    }
+    .direction_block{
+      .direction_desc{
+        display: flex;
+        justify-content: space-between;
+        .direction_desc_title{
+          display: flex;
+          align-items: center;
+          background-color: green;
+          vertical-align: middle;
+          height: 100px;
+          width: 22%;
+          color: black;
+          border-top-left-radius: 30px;
+          h4{
+            font-weight: 700;
+            font-size: 20px;
+            color: rgb(201, 201, 201);
+          }
+        }
+      }
+    }
+    .direction_desc_about{
+      margin-top: 2%;
+      display: flex;
+      justify-content: space-between;
+      .direction_desc_description{
+        width: 45%;
+        .desc{
+          margin-top: 5%;
+        }
+      }
+      .direction_desc_images{
+        width: 50%;
+        img{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
