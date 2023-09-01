@@ -1,11 +1,9 @@
 .footer{
   text-align: center;
-  border: 1px solid red;
   .data_company{
     display: flex;
     justify-content: space-around;
     div{
-      border: 1px solid red;
       width: 20%;
       display: flex;
       flex-direction: column;
@@ -13,6 +11,26 @@
       text-align: center;
       img{
         width: 20%;
+      }
+    }
+  }
+}
+@media (max-width:992px) {
+  .footer{
+    .data_company{
+      div{
+        width: 32%;
+      }
+    }
+  }
+}
+@media (max-width:576px) {
+  .footer{
+    .data_company{
+      flex-direction: column;
+      div{
+        width: 80%;
+        margin: 0 auto;
       }
     }
   }

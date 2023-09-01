@@ -15,12 +15,43 @@
     h2{
       font-weight: 700;
       font-size: 44px;
-      color: #fff;
-      backdrop-filter: blur(20px);
+      color: rgb(0, 0, 0);
+      backdrop-filter: blur(50px);
     }
     p{
       backdrop-filter: blur(150px);
       transform: scale(1, 2);
+      color: rgb(0, 0, 0);
+    }
+  }
+}
+@media (max-width:900px){
+  .employees{
+    div{
+      p{
+        transform: scale(1, 1.5);
+      }
+    }
+  }
+}
+@media (max-width:650px){
+  .employees{
+    div{
+      p{
+        transform: scale(1, 1);
+      }
+    }
+  }
+}
+@media (max-width:560px){
+  .employees{
+    div{
+      p{
+        backdrop-filter: none;
+        background-color: #fff;
+        transform: scale(1, 1);
+        color: rgb(0, 0, 0);
+      }
     }
   }
 }

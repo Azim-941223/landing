@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import scss from "./Product.module.scss";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Product = (props) => {
+
+  useEffect(() => {
+    AOS.init({
+      once: true,
+    });
+  }, [])
   return (
-    <div className={scss.product}>
+    <div data-aos="fade-up" data-aos-delay='250' className={scss.product}>
       <div className={scss.product_content}>
         <h4>{props.title}</h4>
         <p>{props.description}</p>
