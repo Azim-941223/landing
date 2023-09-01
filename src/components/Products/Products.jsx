@@ -4,6 +4,7 @@ import Product from "./Product/Product";
 import Slider from "react-slick";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import arrow from '../../assets/left.svg'
 
 const Products = () => {
   useEffect(() => {
@@ -61,6 +62,23 @@ const Products = () => {
         "https://upload.wikimedia.org/wikipedia/commons/1/18/Kyrgyz_Ministry_of_Finance.png",
     },
   ];
+  function SampleNextArrow(props) {
+    const { onClick } = props;
+    return (
+      <div className={scss.right_back} onClick={onClick}>
+        <img className={scss.arrow} src={arrow} alt="arrow" />
+      </div>
+    );
+  }
+
+  function SamplePrevArrow(props) {
+    const { onClick } = props;
+    return (
+      <div className={scss.left_back} onClick={onClick}>
+        <img className={scss.left_arrow} src={arrow} alt="arrow" />
+      </div>
+    );
+  }
 
   const settings = {
     dots: false,
@@ -68,6 +86,8 @@ const Products = () => {
     infinity: true,
     slidesToShow: 3,
     slidesToScroll: 1,
+    prevArrow: <SamplePrevArrow />,
+    nextArrow: <SampleNextArrow />,
     responsive: [
       {
         breakpoint:1050,
