@@ -1,0 +1,29 @@
+{
+  "header":{
+    "desc":"Digital technologies in all spheres of life: fast, convenient and efficient."
+  },
+  "directions":{
+    "direc":"Main activities:"
+  },
+  "product":{
+    "title":"Our products",
+    "desc":"My Ticket has experience in the implementation of projects of high complexity for government and financial organizations:"
+  },
+  "experince":{
+    "exp":"Our company has extensive experience in:"
+  },
+  "principles":{
+    "princip":"In it's work on any project, My Ticket adheres to the following principles:"
+  },
+  "values":{
+    "title":"Our values",
+    "desc":"The fundamental principle of MyTicket is good business conduct."
+  },
+  "employees":{
+    "title":"Our employees",
+    "desc":"My Ticket employs specialists in the field of consulting and information technology, who have certificates from the world's leading software and hardware manufacturers. The professional development of employees, the active development of new technologies and advanced world experience occur due to the permanent training and advanced training programs for personnel in My Ticket."
+  },
+  "contact":{
+    "title":"Our contacts"
+  }
+}
