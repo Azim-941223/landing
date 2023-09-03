@@ -2,6 +2,7 @@ import React from "react";
 import video from "../../assets/croc_banner_final.mp4";
 import scss from "./Header.module.scss";
 import { useTranslation } from "react-i18next";
+import whitelogo from "../../assets/whitelogo.svg"
 
 const Header = () => {
   const { t, i18n } = useTranslation();
@@ -28,7 +29,10 @@ const Header = () => {
       </select>
       {/* height of video 540px */}
       <header className="container">
-        <h1 className={scss.header_title}>My Ticket</h1>
+        <div className={scss.header_title}>
+          <h1>My Ticket</h1>
+          <img src={whitelogo} alt="logo" />
+        </div>
         <div className={scss.main_title}>
           <h2>My Ticket</h2>
           <h4>{t("header.desc")}</h4>

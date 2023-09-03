@@ -1,42 +1,49 @@
-.main_header{
+.main_header {
   position: relative;
   padding-bottom: 4%;
-  .header_video{
+  .header_video {
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
   }
-  .select_lang{
+  .select_lang {
     color: #fff;
     position: absolute;
     right: 5%;
     top: 4%;
-    width: 7%;
+    width: 6%;
     padding: 0.5% 0;
     border-radius: 5px;
     background: linear-gradient(104.81deg, #3AC168 9.77%, #0DA27A 82.92%);
-    option{
+    option {
       background: #0DA27A;
     }
   }
-  header{
-    .header_title{
+  header {
+    .header_title {
       position: absolute;
+      display: flex;
+      justify-content: space-between;
       top: 4%;
       left: 5%;
-      color: #fff;
-      font-weight: 700;
+      h1 {
+        color: #fff;
+        font-weight: 700;
+      }
+      img {
+        width: 20%;
+      }
     }
-    .main_title{
+    .main_title {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 20px;
       padding: 2% 0;
-      h2{
+      h2 {
         font-size: 38px;
         font-weight: 700;
       }
-      h4{
+      h4 {
         font-size: 25px;
         width: 60%;
         text-align: center;
@@ -45,16 +52,39 @@
     }
   }
 }
-@media (max-width:768px) {
+
+@media (max-width:1300px) {
   .main_header{
-    header{
-      .header_title{
-        font-size: 24px;
+    .select_lang{
+      width: 8%;
+    }
+  }
+}
+@media (max-width:992px) {
+  .main_header{
+    .select_lang{
+      width: 10%;
+    }
+  }
+}
+
+@media (max-width:768px) {
+  .main_header {
+    .select_lang{
+      width: 13.5%;
+    }
+    header {
+      .header_title {
+        h1{
+          font-size: 22px;
+        }
       }
-      .main_title{
+      .main_title {
         gap: 10px;
-        h2{font-size: 30px;}
-        h4{
+        h2 {
+          font-size: 30px;
+        }
+        h4 {
           font-size: 22px;
           width: 80%;
         }
@@ -62,15 +92,39 @@
     }
   }
 }
+
 @media (max-width:576px) {
-  .main_header{
-    header{
-      .main_title{
+  .main_header {
+    .select_lang{
+      width: 20%;
+    }
+    header {
+      .header_title {
+        width: 30%;
+        h1{
+          font-size: 20px;
+        }
+        img{
+          width: 15%;
+        }
+      }
+      .main_title {
         gap: 10px;
-        h2{font-size: 30px;}
-        h4{
+        h2 {
+          font-size: 30px;
+        }
+        h4 {
           font-size: 18px;
         }
+      }
+    }
+  }
+}
+@media (max-width:400px) {
+  .main_header{
+    header{
+      .header_title{
+        width: 35%;
       }
     }
   }
