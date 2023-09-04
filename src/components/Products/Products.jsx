@@ -10,7 +10,7 @@ import axios from "axios";
 import { BASE_URL } from "../constants/constants";
 
 const Products = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [productData, setProductData] = useState([]);
 
   useEffect(() => {
@@ -18,7 +18,11 @@ const Products = () => {
       once: true,
     });
     axios
-      .get(`${BASE_URL}api/products/`)
+      .get(`${BASE_URL}api/products/`,{
+        headers: {
+          'Accept-Language': i18n.language,
+        }
+      })
       .then((response) => {
         const withId = response.data.map((item, index) => ({
           id: index,
@@ -31,7 +35,7 @@ const Products = () => {
       .catch((error) => {
         console.error("Error fetching product data:", error);
       });
-  }, []);
+  }, [i18n.language]);
 
   function SampleNextArrow(props) {
     const { onClick } = props;

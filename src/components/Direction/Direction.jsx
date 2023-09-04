@@ -5,24 +5,27 @@ import { BASE_URL } from "./../constants/constants";
 import { useTranslation } from "react-i18next";
 
 const Direction = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [practiceData, setPracticeData] = useState([]);
   const [selectedPractice, setSelectedPractice] = useState(practiceData[0]);
   const [selectedTitle, setSelectedTitle] = useState(null); // Define selectedTitle for mobile
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 992);
 
-  const fetchPracticeData = async () => {
-    try {
-      const response = await axios.get(`${BASE_URL}/api/practice/`);
-      setPracticeData(response.data);
-    } catch (error) {
-      console.error("Error fetching practice data:", error);
-    }
-  };
-
   useEffect(() => {
+    const fetchPracticeData = async () => {
+      try {
+        const response = await axios.get(`${BASE_URL}/api/practice/`, {
+          headers: {
+            "Accept-Language": i18n.language,
+          },
+        });
+        setPracticeData(response.data);
+      } catch (error) {
+        console.error("Error fetching practice data:", error);
+      }
+    };
     fetchPracticeData();
-  }, []);
+  }, [i18n.language]);
 
   useEffect(() => {
     if (practiceData.length > 0) {

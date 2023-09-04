@@ -25,7 +25,7 @@ const Header = () => {
         value={i18n.language}>
         <option value="ru">Русский</option>
         <option value="en">English</option>
-        <option value="kg">Кыргызча</option>
+        <option value="ky">Кыргызча</option>
       </select>
       {/* height of video 540px */}
       <header className="container">

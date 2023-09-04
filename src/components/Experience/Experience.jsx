@@ -11,26 +11,29 @@ const Experience = () => {
   const [experienceData, setExperienceData] = useState([]);
   const [princpleData, setPrincpleData] = useState([]);
   const [valueData, setValueData] = useState([]);
-  const { t } = useTranslation();
-
-  const fetchData = async (url, setDataFunction) => {
-    try {
-      const response = await axios.get(url);
-      const dataWithID = response.data.map((item,index) => ({
-        id: index,
-        title: item.title,
-      }));
-      setDataFunction(dataWithID)
-    } catch (error) {
-      console.error(`Error fetching data from ${url}:`, error);
-    }
-  };
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
+    const fetchData = async (url, setDataFunction) => {
+      try {
+        const response = await axios.get(url, {
+          headers: {
+            'Accept-Language': i18n.language,
+          }
+        });
+        const dataWithID = response.data.map((item,index) => ({
+          id: index,
+          title: item.title,
+        }));
+        setDataFunction(dataWithID)
+      } catch (error) {
+        console.error(`Error fetching data from ${url}:`, error);
+      }
+    };
     fetchData(`${BASE_URL}api/experience/`, setExperienceData);
     fetchData(`${BASE_URL}api/principle/`, setPrincpleData);
     fetchData(`${BASE_URL}api/values/`, setValueData);
-  },[])
+  },[i18n.language])
 
   return (
     <div className="container">

@@ -8,12 +8,16 @@ import { BASE_URL } from "../constants/constants";
 import axios from "axios";
 
 const Footer = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [contactData, setContactData] = useState({});
 
   useEffect(() => {
     axios
-      .get(`${BASE_URL}api/contacts/`)
+      .get(`${BASE_URL}api/contacts/`,{
+        headers: {
+          'Accept-Language': i18n.language,
+        }
+      })
       .then((response) => {
         const data = response.data[0];
         setContactData(data);
@@ -21,7 +25,7 @@ const Footer = () => {
       .catch((error) => {
         console.error("Error fetching contact data:", error);
       });
-  }, []);
+  }, [i18n.language]);
 
   return (
     <div className={scss.footer}>
