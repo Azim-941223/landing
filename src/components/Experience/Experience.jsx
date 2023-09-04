@@ -1,3 +1,16 @@
+/**
+ * Experience Component
+ *
+ * This component displays experience-related information, including content, principles, and values.
+ * It fetches data from an API based on the user's language and displays it.
+ *
+ * @component
+ * @example
+ * import Experience from "./Experience";
+ *
+ * // Inside the parent component's render function:
+ * <Experience />
+ */
 import React, { useEffect, useState } from "react";
 import scss from "./Experience.module.scss";
 import Content from "./Content/Content";
@@ -21,25 +34,27 @@ const Experience = () => {
             'Accept-Language': i18n.language,
           }
         });
-        const dataWithID = response.data.map((item,index) => ({
+        const dataWithID = response.data.map((item, index) => ({
           id: index,
           title: item.title,
         }));
-        setDataFunction(dataWithID)
+        setDataFunction(dataWithID);
       } catch (error) {
         console.error(`Error fetching data from ${url}:`, error);
       }
     };
+
+    // Fetch data for experience, principles, and values based on the selected language
     fetchData(`${BASE_URL}api/experience/`, setExperienceData);
     fetchData(`${BASE_URL}api/principle/`, setPrincpleData);
     fetchData(`${BASE_URL}api/values/`, setValueData);
-  },[i18n.language])
+  }, [i18n.language]);
 
   return (
     <div className="container">
       <div className={scss.experience}>
         <div className={scss.experience_title}>
-          <h2>{t("experince.exp")}</h2>
+          <h2>{t("experience.exp")}</h2>
         </div>
         <div className={scss.experience_content}>
           {experienceData.map((item) => (

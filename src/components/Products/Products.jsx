@@ -1,3 +1,16 @@
+/**
+ * Products Component
+ *
+ * This component displays a carousel of products fetched from an API based on the user's language.
+ * It uses the react-slick library for carousel functionality.
+ *
+ * @component
+ * @example
+ * import Products from "./Products";
+ *
+ * // Inside the parent component's render function:
+ * <Products />
+ */
 import React, { useEffect, useState } from "react";
 import scss from "./Products.module.scss";
 import Product from "./Product/Product";
@@ -18,7 +31,7 @@ const Products = () => {
       once: true,
     });
     axios
-      .get(`${BASE_URL}api/products/`,{
+      .get(`${BASE_URL}api/products/`, {
         headers: {
           'Accept-Language': i18n.language,
         }
@@ -80,6 +93,7 @@ const Products = () => {
       },
     ],
   };
+
   return (
     <div className={scss.main_products}>
       <div className="container">

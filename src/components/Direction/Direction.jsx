@@ -1,3 +1,17 @@
+/**
+ * Direction Component
+ *
+ * This component displays information about different practice directions.
+ * It fetches data from an API based on the selected language and provides a responsive UI
+ * to display information on desktop and mobile devices.
+ *
+ * @component
+ * @example
+ * import Direction from "./Direction";
+ *
+ * // Inside the parent component's render function:
+ * <Direction />
+ */
 import React, { useState, useEffect } from "react";
 import scss from "./Direction.module.scss";
 import axios from "axios";
@@ -8,9 +22,10 @@ const Direction = () => {
   const { t, i18n } = useTranslation();
   const [practiceData, setPracticeData] = useState([]);
   const [selectedPractice, setSelectedPractice] = useState(practiceData[0]);
-  const [selectedTitle, setSelectedTitle] = useState(null); // Define selectedTitle for mobile
+  const [selectedTitle, setSelectedTitle] = useState(null);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 992);
 
+  // Fetch practice data based on language selection
   useEffect(() => {
     const fetchPracticeData = async () => {
       try {
@@ -27,12 +42,14 @@ const Direction = () => {
     fetchPracticeData();
   }, [i18n.language]);
 
+  // Set the selected practice when practice data is available
   useEffect(() => {
     if (practiceData.length > 0) {
       setSelectedPractice(practiceData[0]);
     }
   }, [practiceData]);
 
+  // Update the isDesktop state based on window width
   useEffect(() => {
     const handleResize = () => {
       setIsDesktop(window.innerWidth > 992);
@@ -45,6 +62,7 @@ const Direction = () => {
     };
   }, []);
 
+  // Handle practice selection
   const handlePracticeSelect = (practice) => {
     setSelectedPractice(practice);
   };
@@ -89,6 +107,7 @@ const Direction = () => {
                 </div>
               </>
             ) : (
+              // Mobile version
               <>
                 {practiceData.map((item) => (
                   <div key={item.title} className={scss.direction_desc_mobile}>
