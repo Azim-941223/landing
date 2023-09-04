@@ -54,7 +54,7 @@ const Experience = () => {
     <div className="container">
       <div className={scss.experience}>
         <div className={scss.experience_title}>
-          <h2>{t("experience.exp")}</h2>
+          <h2>{t("experince.exp")}</h2>
         </div>
         <div className={scss.experience_content}>
           {experienceData.map((item) => (
