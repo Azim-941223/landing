@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: landing
+    image: landing
+    build:
+      context: .
+      target: development
+    volumes:
+      - ./src:/app/src
+    ports:
+      - "8083:3000"
