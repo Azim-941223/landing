@@ -6,4 +6,4 @@ COPY yarn.lock .
 RUN yarn install
 # Copy app files
 COPY . .
-RUN yarn build
+CMD [ "yarn", "start" ]
