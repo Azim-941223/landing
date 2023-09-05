@@ -24,7 +24,6 @@ const Direction = () => {
   const [selectedPractice, setSelectedPractice] = useState(practiceData[0]);
   const [selectedTitle, setSelectedTitle] = useState(null);
   const [isDesktop, setIsDesktop] = useState(window.innerWidth > 992);
-
   // Fetch practice data based on language selection
   useEffect(() => {
     const fetchPracticeData = async () => {
